@@ -64,6 +64,9 @@ impl BakedDataExporter {
         let path = self.mod_directory.join(path).with_extension("raw");
         std::fs::create_dir_all(&path.parent().unwrap())?;
 
+        let syntax_tree: syn::File = syn::parse2(data).unwrap();
+        let data = prettyplease::unparse(&syntax_tree);
+
         {
             let mut file = crlify::BufWriterWithLineEndingFix::new(File::create(&path)?);
             writeln!(file, "// @generated")?;

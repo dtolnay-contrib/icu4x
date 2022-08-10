@@ -1,5 +1,5 @@
 // @generated
-type DataStruct = < :: icu_properties :: provider :: ChangesWhenCasefoldedV1Marker as :: icu_provider :: DataMarker > :: Yokeable ;
+type DataStruct = <::icu_properties::provider::ChangesWhenCasefoldedV1Marker as ::icu_provider::DataMarker>::Yokeable;
 pub static DATA: litemap::LiteMap<&str, &DataStruct, &[(&str, &DataStruct)]> =
     litemap::LiteMap::from_sorted_slice_unchecked(&[("und", UND)]);
 static UND: &DataStruct =
